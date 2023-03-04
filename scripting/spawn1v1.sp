@@ -66,7 +66,7 @@ public OnPluginStart()
 
 	RegAdminCmd("sm_spawnlistall", CommandListSpawnsAll, ADMFLAG_SLAY, " <No Args> Lists all the Spawns in the database");
 
-	RegConsoleCmd("kill", return Plugin_Handled, "恶意抢注");
+	RegConsoleCmd("kill", Cmd_Kill, "Block player suicide.");
 
 	//Setup Sql Connection:
 	initSQL();
@@ -92,6 +92,11 @@ public OnPluginStart()
 	HookEvent("round_start", round_start);
 	HookEvent("player_death", round_tie);
 	HookEvent("round_end", roundend);
+}
+
+public Action Cmd_Kill(int client, int args)
+{
+	return Plugin_Handled;
 }
 
 
