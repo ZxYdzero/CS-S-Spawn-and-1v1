@@ -234,7 +234,7 @@ public Action:round_tie(Event event, const char[] name, bool dontBroadcast)
     //被杀者与杀手之间的信息打印 且包括击杀次数的上涨
 	if(Died == 0 || Attack == 0)
 	{
-		return Plugin_Continue
+		return Plugin_Continue;
 	}
 
 	if(Died == Attack)
